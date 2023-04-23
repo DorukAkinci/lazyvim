@@ -1,2 +1,7 @@
 -- to disable a plugin, add it to this file
-return {}
+return {
+  {
+    "echasnovski/mini.pairs",
+    enabled = false,
+  },
+}
