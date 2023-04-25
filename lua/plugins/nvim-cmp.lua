@@ -5,5 +5,10 @@ return {
   opts = function(_, opts)
     local cmp = require("cmp")
     opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
+    opts.mapping = cmp.mapping.preset.insert({
+      -- cr accept false
+      -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
+      ["<CR>"] = cmp.config.disable,
+    })
   end,
 }

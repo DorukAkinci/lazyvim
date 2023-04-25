@@ -4,4 +4,8 @@ return {
     "echasnovski/mini.pairs",
     enabled = false,
   },
+  {
+    "ggandor/flit.nvim",
+    enabled = false,
+  },
 }

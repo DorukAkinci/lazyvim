@@ -4,7 +4,7 @@
 
 -- disable swapfiles
 vim.opt.swapfile = false
-
+vim.opt.completeopt = "menuone,noselect,preview"
 -- add additional terraform filetypes
 vim.filetype.add({
   extension = {

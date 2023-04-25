@@ -25,3 +25,21 @@ vim.keymap.set("n", "<leader>[", "m`O<Esc>`", { desc = "Add empty line above" })
 
 -- paste without losing the yank register with leader p
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without losing the yank register" })
+
+-- replace the selected text in visual mode with %s replacement - vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+vim.keymap.set(
+  "x",
+  "<leader>r",
+  '"hy:%s/<C-r>h//gc<left><left><left>',
+  { desc = "Replace the selected text in visual mode with %s replacement" }
+)
+
+vim.keymap.set("n", "<leader>rr", "<cmd>MurenToggle<CR>", { desc = "Toggle Muren" })
+vim.keymap.set("n", "<leader>rR", "<cmd>MurenFresh<CR>", { desc = "Toggle Muren" })
+
+-- lsp go to definition
+vim.keymap.set("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+-- lsp buf hover
+vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Hover" })
+-- lsp go to references
+vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.references()<CR>", { desc = "Go to references" })
