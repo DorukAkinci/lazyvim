@@ -9,6 +9,9 @@ return {
       -- cr accept false
       -- ["<CR>"] = cmp.mapping.confirm({ select = false }),
       ["<CR>"] = cmp.config.disable,
+      ["<C-space>"] = cmp.mapping.complete(),
+      ["<C-e>"] = cmp.mapping.close(),
+      ["<C-y>"] = cmp.mapping.confirm({ select = true }),
     })
   end,
 }
