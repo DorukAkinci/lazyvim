@@ -1,0 +1,41 @@
+return {}
+-- return {
+--   { -- copilot lazynvim zbirenbaum
+--     "zbirenbaum/copilot.lua",
+--     cmd = "Copilot",
+--     build = ":Copilot auth",
+--     trigger = "InsertEnter",
+--     opts = {
+--       suggestion = { enabled = false, auto_trigger = true, keymap = { accept = "<C-y>" } },
+--       panel = { enabled = true, auto_refresh = true },
+--       filetypes = {
+--         yaml = true,
+--         markdown = true,
+--         ["."] = false,
+--       },
+--     },
+--   },
+--   {
+--     "zbirenbaum/copilot-cmp",
+--     dependencies = "copilot.lua",
+--     trigger = "InsertEnter",
+--     opts = {
+--       formatters = {
+--         label = require("copilot_cmp.format").format_label_text,
+--         insert_text = require("copilot_cmp.format").remove_existing,
+--         preview = require("copilot_cmp.format").deindent,
+--       },
+--     },
+--     config = function(_, opts)
+--       local copilot_cmp = require("copilot_cmp")
+--       copilot_cmp.setup(opts)
+--       -- attach cmp source whenever copilot attaches
+--       -- fixes lazy-loading issues with the copilot cmp source
+--       -- require("lazyvim.util").on_attach(function(client)
+--       --   if client.name == "copilot" then
+--       --     copilot_cmp._on_insert_enter()
+--       --   end
+--       -- end)
+--     end,
+--   },
+-- }

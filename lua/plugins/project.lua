@@ -1,9 +1,10 @@
+-- return {}
 return {
   "ahmedkhalf/project.nvim",
   event = "VeryLazy",
   opts = {
     ignore_lsp = { "lua_ls", "julials" },
-    silent_chdir = false,
+    silent_chdir = true,
     detection_methods = { "pattern" },
   },
   config = function(_, opts)
