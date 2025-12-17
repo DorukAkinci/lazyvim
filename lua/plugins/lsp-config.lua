@@ -1,4 +1,4 @@
-return { -- configure LSPs
+return {
   {
     "neovim/nvim-lspconfig",
     dependencies = "folke/neodev.nvim", -- lsp for nvim-lua config
