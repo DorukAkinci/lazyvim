@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   keys = {
-    { "<S-space>", "Incremental selection" },
+    { "<S-space>", desc = "Incremental selection", mode = "n" },
   },
   opts = {
     incremental_selection = {
