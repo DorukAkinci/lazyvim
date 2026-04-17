@@ -10,7 +10,7 @@ return {
         find_left = "gzF", -- Find surrounding (to the left)
         highlight = "gzh", -- Highlight surrounding
         replace = "gzr", -- Replace surrounding
-        update_n_linez = "gzn", -- Update `n_lines`
+        update_n_lines = "gzn", -- Update `n_lines`
       },
     },
   },
