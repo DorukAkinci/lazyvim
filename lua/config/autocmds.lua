@@ -2,9 +2,14 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- add autocmd for IlluminatedWordRead highlighting and add underline
-vim.cmd("autocmd BufReadPost * highlight IlluminatedWordRead gui=underline") -- #ff0000 red color
-vim.cmd("autocmd BufReadPost * highlight IlluminatedWordText gui=underline")
+local illuminate_group = vim.api.nvim_create_augroup("illuminate_underline", { clear = true })
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = illuminate_group,
+  callback = function()
+    vim.api.nvim_set_hl(0, "IlluminatedWordRead", { underline = true })
+    vim.api.nvim_set_hl(0, "IlluminatedWordText", { underline = true })
+  end,
+})
 
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
@@ -18,13 +23,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
--- set autocmd for filetype terraform to set commentstring
-vim.api.nvim_exec(
-  [[
-augroup terraform_commentstring
-  autocmd!
-  autocmd FileType terraform setlocal commentstring=#\ %s
-augroup END
-]],
-  true
-)
+local terraform_group = vim.api.nvim_create_augroup("terraform_commentstring", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = terraform_group,
+  pattern = "terraform",
+  callback = function()
+    vim.bo.commentstring = "# %s"
+  end,
+})
